@@ -1,38 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   App
+   ========================================== */
+
 .App {
+  width: 320px;
+  background: lightgrey;
+}
+/* ==========================================
+   CurrentWeather
+   ========================================== */
+#day-banner {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#current-weather {
+  display: flex;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#current-temperature {
+  display: flex;
+  flex-basis: 50%;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#current-icon {
+  display: flex;
+  flex-basis: 50%;
+  justify-content: center;
+}
+
+
+/* ==========================================
+   HourlyWeather
+   ========================================== */
+
+#hourly-weather {
+  display: flex;
+  justify-content: space-around;
+}
+
+.hour {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/* ==========================================
+   SecondaryWeather
+   ========================================== */
+
+#secondary-weather {
+  display: flex;
+  justify-content: space-around;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.secondary-category {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   WeeklyWeather
+   ========================================== */
+
+#weekly-weather {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.day {
+  display: grid;
+  grid-template-columns: 58% 14% 18% 10%;
 }
