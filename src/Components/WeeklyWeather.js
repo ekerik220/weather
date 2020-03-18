@@ -1,4 +1,6 @@
 import React from "react";
+import mapWeatherIcon from "../util/mapWeatherIcon.js";
+
 
 function WeeklyWeather(props) {
   const days = props.weeklyWeather.data.slice(1, 8); // Next 7 days after current day
@@ -18,9 +20,7 @@ function WeeklyWeather(props) {
         return (
           <div className="day" key={day_name}>
             <span className="day-name">{day_name}</span>
-            <div
-              style={{ background: "red", width: "25px", height: "25px" }}
-            ></div>
+            <i className={mapWeatherIcon(day.icon)}></i>
             <span>{Math.round(day.temperatureHigh) + "°"}</span>
             <span>{Math.round(day.temperatureLow) + "°"}</span>
           </div>

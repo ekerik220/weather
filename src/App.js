@@ -93,7 +93,7 @@ function App() {
   }
 
   // Render the application only if both API requests have returned something already.
-  if (city && currentWeather) {
+  if (city && currentWeather && hourlyWeather && weeklyWeather) {
     return (
       <div className="App">
         <CurrentWeather currentWeather={currentWeather} city={city} />

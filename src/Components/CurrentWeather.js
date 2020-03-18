@@ -1,7 +1,9 @@
 import React from "react";
+import mapWeatherIcon from "../util/mapWeatherIcon.js";
 
 function CurrentWeather(props) {
   const currentTemp = Math.round(props.currentWeather.temperature);
+  const icon = props.currentWeather.icon;
   const date = new Date();
   const day_name = [
     "Sunday",
@@ -25,9 +27,7 @@ function CurrentWeather(props) {
           <span>+{currentTemp}°</span>
         </div>
         <div id="current-icon">
-          <div
-            style={{ background: "red", width: "50px", height: "50px" }}
-          ></div>
+          <i className={mapWeatherIcon(icon)}></i>
         </div>
       </div>
     </div>
