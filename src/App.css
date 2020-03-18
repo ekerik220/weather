@@ -1,5 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Baloo+Chettan+2&display=swap');
+
 * {
   box-sizing: border-box;
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-size: calc(18px + (30 - 18) * ((100vw - 320px) / (1600 - 320)));
+}
+
+body {
+  min-height: 100%;
+  background: #D6E4FF;
 }
 
 /* ==========================================
@@ -7,21 +16,36 @@
    ========================================== */
 
 .App {
-  width: 320px;
-  background: lightgrey;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+  min-width: 320px;
+  max-width: 500px;
+  width: 100%;
+  min-height: 100%;
+  background: #476C9B;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.589);
 }
 /* ==========================================
    CurrentWeather
    ========================================== */
 #day-banner {
   text-align: center;
+  margin-bottom: 1rem;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 #current-weather {
   display: flex;
+  margin-bottom: 1rem;
 }
 
-#current-temperature {
+#current-temperature-box {
   display: flex;
   flex-basis: 50%;
   flex-direction: column;
@@ -29,10 +53,26 @@
   align-items: center;
 }
 
+#current-temp {
+  margin:-1rem;
+  font-size: 2.5rem;
+}
+
+#city-name {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 700;
+}
+
 #current-icon {
   display: flex;
   flex-basis: 50%;
   justify-content: center;
+  align-items: center;
+}
+
+#current-icon i {
+  font-size: 2.5rem;
 }
 
 
@@ -43,11 +83,23 @@
 #hourly-weather {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1rem;
 }
 
 .hour {
   display: flex;
   flex-direction: column;
+}
+
+.hour-label {
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: -0.3rem;
+}
+
+.hour i {
+  align-self: center;
+  font-size: 1.3rem;
+  margin-top: 0.2rem;
 }
 
 /* ==========================================
@@ -57,11 +109,16 @@
 #secondary-weather {
   display: flex;
   justify-content: space-around;
+  margin-bottom: 1rem;
 }
 
 .secondary-category {
   display: flex;
   flex-direction: column;
+}
+
+.secondary-category-label {
+  color: rgba(255, 255, 255, 0.5);
 }
 
 /* ==========================================
@@ -71,10 +128,22 @@
 #weekly-weather {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 30px;
+  background: #92A9D3;
+  border-radius: 10px;
 }
 
 .day {
   display: grid;
   grid-template-columns: 58% 14% 18% 10%;
+  align-items: center;
+  margin-bottom: 0.2rem;
+}
+
+.day-name {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.low-temp {
+  color: rgba(255, 255, 255, 0.6);
 }

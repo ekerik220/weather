@@ -22,7 +22,7 @@ function WeeklyWeather(props) {
             <span className="day-name">{day_name}</span>
             <i className={mapWeatherIcon(day.icon)}></i>
             <span>{Math.round(day.temperatureHigh) + "°"}</span>
-            <span>{Math.round(day.temperatureLow) + "°"}</span>
+            <span className="low-temp">{Math.round(day.temperatureLow) + "°"}</span>
           </div>
         );
       })}

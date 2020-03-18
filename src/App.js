@@ -4,6 +4,7 @@ import CurrentWeather from "./Components/CurrentWeather";
 import HourlyWeather from "./Components/HourlyWeather";
 import SecondaryWeather from "./Components/SecondaryWeather";
 import WeeklyWeather from "./Components/WeeklyWeather";
+import DayBanner from "./Components/DayBanner";
 
 function App() {
   const [city, setCity] = useState("");
@@ -95,12 +96,13 @@ function App() {
   // Render the application only if both API requests have returned something already.
   if (city && currentWeather && hourlyWeather && weeklyWeather) {
     return (
-      <div className="App">
-        <CurrentWeather currentWeather={currentWeather} city={city} />
-        <HourlyWeather hourlyWeather={hourlyWeather} />
-        <SecondaryWeather currentWeather={currentWeather} />
-        <WeeklyWeather weeklyWeather={weeklyWeather} />
-      </div>
+        <div className="App">
+          <DayBanner />
+          <CurrentWeather currentWeather={currentWeather} city={city} />
+          <HourlyWeather hourlyWeather={hourlyWeather} />
+          <SecondaryWeather currentWeather={currentWeather} />
+          <WeeklyWeather weeklyWeather={weeklyWeather} />
+        </div>
     );
   }
 

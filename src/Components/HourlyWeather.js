@@ -9,7 +9,7 @@ function HourlyWeather(props) {
       {hours.map((hour, index) => {
         return (
           <div className="hour" key={index}>
-            <span>{new Date(hour.time * 1000).getHours() + ":00"}</span> {/* hour.time is in UNIX units at first */}
+            <span className="hour-label">{new Date(hour.time * 1000).getHours() + ":00"}</span> {/* hour.time is in UNIX units at first */}
             <span>{Math.round(hour.temperature) + "°"}</span>
             <i className={mapWeatherIcon(hour.icon)}></i>
           </div>
