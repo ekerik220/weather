@@ -1,35 +1,22 @@
-import React from 'react';
+import React from "react";
 
-function HourlyWeather() {
-    return (
-        <div id="hourly-weather">
-            <div className="hour">
-                <span>16:00</span>
-                <span>32°</span>
-                <div style={{background:"red", width:"50px", height: "50px"}}></div>
-            </div>
-            <div className="hour">
-                <span>17:00</span>
-                <span>32°</span>
-                <div style={{background:"red", width:"50px", height: "50px"}}></div>
-            </div>
-            <div className="hour">
-                <span>18:00</span>
-                <span>32°</span>
-                <div style={{background:"red", width:"50px", height: "50px"}}></div>
-            </div>
-            <div className="hour">
-                <span>19:00</span>
-                <span>32°</span>
-                <div style={{background:"red", width:"50px", height: "50px"}}></div>
-            </div>
-            <div className="hour">
-                <span>20:00</span>
-                <span>32°</span>
-                <div style={{background:"red", width:"50px", height: "50px"}}></div>
-            </div>
-        </div>
-    );
+function HourlyWeather(props) {
+  const hours = props.hourlyWeather.data.slice(1, 6); // The 5 hours after current hour
+  return (
+    <div id="hourly-weather">
+      {hours.map((hour, index) => {
+        return (
+          <div className="hour" key={index}>
+            <span>{new Date(hour.time * 1000).getHours() + ":00"}</span> {/* hour.time is in UNIX units at first */}
+            <span>{Math.round(hour.temperature) + "°"}</span>
+            <div
+              style={{ background: "red", width: "50px", height: "50px" }}
+            ></div>
+          </div>
+        );
+      })}
+    </div>
+  );
 }
 
 export default HourlyWeather;
