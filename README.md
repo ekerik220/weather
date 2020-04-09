@@ -17,4 +17,4 @@ locationiq API is used for reverse geocoding the user's city name (https://locat
 
 ## Live link
 
---
+https://ekerik220.github.io/weather/
